@@ -18,7 +18,7 @@ Use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::middleware('auth')->group(function () {
@@ -33,4 +33,5 @@ Route::middleware('auth')->group(function () {
     Route::put('user/edit', [UserController::class, 'update'])->name('user.update');
     Route::delete('user/edit', [UserController::class, 'destroy'])->name('user.destroy');
 });
+
 require __DIR__.'/auth.php';

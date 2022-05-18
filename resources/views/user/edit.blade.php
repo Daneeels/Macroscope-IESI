@@ -45,10 +45,10 @@
                                 @enderror
                             </div>
                     
-                            {{-- <!-- Password -->
+                            <!-- Password -->
                             <div class="mb-4 d-flex flex-column">
                                 <label for="password">Password</label>
-                                <input type="password" name="password" id="password" required autocomplete="new-password">
+                                <input type="password" name="password" id="password" required autocomplete="new-password" value="{{$user->password}}">
                                 @error('password')
                                     <div class="text-danger mt-2">
                                         {{$message}}
@@ -65,7 +65,7 @@
                                         {{$message}}
                                     </div>
                                 @enderror
-                            </div> --}}
+                            </div>
                     
                             <button type="submit" class="btn btn-dark">Edit profile</button>
                     </form>

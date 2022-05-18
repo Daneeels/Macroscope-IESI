@@ -43,7 +43,7 @@
                             <button type="submit" class="btn btn-dark">Edit</button>
                     </form>
 
-                    <hr>
+                    {{-- <hr>
                     <h1>Delete Article</h1>
                     <h6>Once you delete it, there is no going back. Are you sure?</h6>
 
@@ -54,7 +54,7 @@
                             <button type="submit" class="btn btn-outline-danger">Delete</button>
                         </div>
                         
-                    </form>
+                    </form> --}}
                 </div>
             </div>
         </div>

@@ -63,18 +63,18 @@
                     </form>
                         
                     
-            <hr>
-            <h1 class="fs-4 fw-bold w-100 text-danger">Delete Webinar</h1>
-            <h6 class="text-muted mb-4">Once you delete it, there is no going back. Are you sure?</h6>
+                    {{-- <hr>
+                    <h1 class="fs-4 fw-bold w-100 text-danger">Delete Webinar</h1>
+                    <h6 class="text-muted mb-4">Once you delete it, there is no going back. Are you sure?</h6>
 
-            <form action="{{route('webinar.destroy', $webinar->id)}}" method="post">
-                @method('delete')
-                @csrf
-                <div class="d-flex flex-column">
-                    <button type="submit" class="btn btn-outline-danger">Delete</button>
-                </div>
-                
-            </form>
+                    <form action="{{route('webinar.destroy', $webinar->id)}}" method="post">
+                        @method('delete')
+                        @csrf
+                        <div class="d-flex flex-column">
+                            <button type="submit" class="btn btn-outline-danger">Delete</button>
+                        </div>
+                        
+                    </form> --}}
                 </div>
             </div>
         </div>
