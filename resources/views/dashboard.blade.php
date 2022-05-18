@@ -15,3 +15,8 @@
         </div>
     </div>
 </x-app-layout>
+
+/* 
+{{ HTML::form("foo") }};
+{{ HTML::form("bar") }};
+*/
