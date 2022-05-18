@@ -42,6 +42,9 @@
                     </x-slot>
 
                     <x-slot name="content">
+                        <x-dropdown-link href="user/edit/{{Auth::user()->username}}">
+                                {{ __('Edit profile') }}
+                        </x-dropdown-link>
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -53,6 +56,8 @@
                             </x-dropdown-link>
                         </form>
                     </x-slot>
+
+                    
                 </x-dropdown>
             </div>
 
