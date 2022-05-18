@@ -20,9 +20,9 @@
                         {{ __('Artikel') }}
                     </x-nav-link>
 
-                    {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('webinar.index')" :active="request()->routeIs('webinar.index')">
                         {{ __('Webinar') }}
-                    </x-nav-link> --}}
+                    </x-nav-link>
                 </div>
             </div>
 

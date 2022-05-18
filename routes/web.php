@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 Use App\Http\Controllers\ArtikelController;
+Use App\Http\Controllers\WebinarController;
 
 
 /*
@@ -25,5 +26,6 @@ Route::middleware('auth')->group(function () {
     })->name('dashboard');
 
     Route::resource('artikel', ArtikelController::class);
+    Route::resource('webinar', WebinarController::class);
 });
 require __DIR__.'/auth.php';
