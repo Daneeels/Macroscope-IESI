@@ -18,5 +18,4 @@
 
 /* 
 {{ HTML::form("foo") }};
-{{ HTML::form("bar") }};
 */
