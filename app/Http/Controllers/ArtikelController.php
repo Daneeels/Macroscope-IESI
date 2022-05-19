@@ -16,7 +16,7 @@ class ArtikelController extends Controller
     public function index()
     {
         return view('artikel.index',[
-            'artikels' => Artikel::paginate(3),
+            'artikels' => Artikel::paginate(9),
         ]);
     }
 
