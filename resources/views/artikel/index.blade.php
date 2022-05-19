@@ -102,6 +102,10 @@
                             {{$artikel->content}}
                         </h5>
                         
+
+                        <h3 class="font-semibold text-lg text-black-400 leading-tight">
+                            <a href="{{route('artikel.show', $artikel)}}">Read More</a>
+                        </h3>
                 </div>
             </div>
         </div>

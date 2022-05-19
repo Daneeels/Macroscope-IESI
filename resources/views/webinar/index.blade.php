@@ -22,7 +22,6 @@
 
                         @can('admin')
                         <span class="font-semibold text-lg text-black-400 leading-tight">
-                            {{-- <a href="{{route('webinar.edit', $webinar)}}">Edit</a> --}}
 
                             <x-dropdown width="48">
                                 <x-slot name="trigger">
@@ -42,15 +41,6 @@
                                             {{ __('Edit webinar') }}
                                     </x-dropdown-link>
                                     <!-- Authentication -->
-                                    {{-- <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-            
-                                        <x-dropdown-link :href="route('logout')"
-                                                onclick="event.preventDefault();
-                                                            this.closest('form').submit();">
-                                            {{ __('Log Out') }}
-                                        </x-dropdown-link>
-                                    </form> --}}
 
                                     <form action="{{route('webinar.destroy', $webinar->id)}}" method="post">
                                         @method('delete')

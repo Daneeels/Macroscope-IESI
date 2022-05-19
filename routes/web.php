@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 Use App\Http\Controllers\ArtikelController;
 Use App\Http\Controllers\WebinarController;
 Use App\Http\Controllers\UserController;
+Use App\Http\Controllers\DashboardController;
 
 
 /*
@@ -22,11 +23,14 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    // Route::get('/dashboard', function () {
+    //     return view('dashboard');
+    // })->name('dashboard');
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('artikel', ArtikelController::class);
+    
+
     Route::resource('webinar', WebinarController::class);
 
     Route::get('user/edit/{user:username}', [UserController::class, 'edit'])->name('user.edit');
