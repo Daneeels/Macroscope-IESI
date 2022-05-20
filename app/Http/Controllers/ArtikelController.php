@@ -15,7 +15,7 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        return view('artikel.index',[
+        return view('artikel.index', [
             'artikels' => Artikel::paginate(9),
         ]);
     }
@@ -41,7 +41,7 @@ class ArtikelController extends Controller
     {
         $this->authorize('admin');
         Artikel::create($request->all());
-        return back()->with('success','Artikel berhasil terinput :D');
+        return redirect('artikel')->with('success', 'Artikel berhasil terinput :D');
     }
 
     // /**
@@ -52,7 +52,7 @@ class ArtikelController extends Controller
     //  */
     public function show(Artikel $artikel)
     {
-        return view('artikel.show',[
+        return view('artikel.show', [
             'artikel' => $artikel,
         ]);
     }
@@ -66,7 +66,7 @@ class ArtikelController extends Controller
     public function edit(Artikel $artikel)
     {
         $this->authorize('admin');
-        return view('artikel.edit',[
+        return view('artikel.edit', [
             'artikel' => $artikel,
         ]);
     }
@@ -80,14 +80,14 @@ class ArtikelController extends Controller
     //  */
     public function update(ArtikelRequest $request, $id)
     {
-        
+
         $this->authorize('admin');
         Artikel::find($id)->update([
             'title' => $request->title,
             'author' => $request->author,
             'content' => $request->content,
         ]);
-        return back()->with('success','Artikel berhasil teredit :)');
+        return back()->with('success', 'Artikel berhasil teredit :)');
     }
 
     // /**

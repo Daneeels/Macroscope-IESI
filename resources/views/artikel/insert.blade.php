@@ -1,50 +1,51 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Insert Article
-        </h2>
-    </x-slot>
+        <div class="text-center">
+            <h2 class="font-extrabold text-3xl leading-tight mx-auto my-2">
+                Add Article
+            </h2>
+            <h4 class="text-md-center opacity-50">"You can make anything by writing."</h4>
+        </div>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <form action="{{route('artikel.store')}}" method="post">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="title" class="form-label">Title</label>
-                            <input type="text" name="title" id="title" placeholder="Insert title here" required value="{{old('title')}}">
-                            @error('title')
-                                <div class="text-danger mt-2">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="mb-3">
-                            <label for="author" class="form-label">Author</label>
-                            <input type="text" name="author" id="author" placeholder="Insert author here" required value="{{old('author')}}">
-                            @error('author')
-                                <div class="text-danger mt-2">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="mb-3">
-                            <label for="content" class="form-label">Content</label>
-                            <textarea placeholder="Insert content here" id="content" name="content"></textarea required value="{{old('content')}}">
-                            @error('content')
-                                <div class="text-danger mt-2">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                        </div>
-                
-                        
-                            <button type="submit" class="btn btn-dark w-100">Insert</button>
-                        
+        <div class="container mx-auto my-16">
+            <div class="p-12">
+                <form action="{{ route('artikel.store') }}" method="post">
+                    @csrf
+                    <div class="mb-7">
+                        <label for="title" class="form-label">Title</label>
+                        <input class="block mt-1 w-full rounded-md border-black border-opacity-20" type="text"
+                            name="title" id="title" placeholder="Insert title here" required
+                            value="{{ old('title') }}">
+                        @error('title')
+                            <div class="text-danger mt-2">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-7">
+                        <label for="author" class="form-label">Author</label>
+                        <input class="block mt-1 w-full rounded-md border-black border-opacity-20" type="text"
+                            name="author" id="author" placeholder="Insert author here" required
+                            value="{{ old('author') }}">
+                        @error('author')
+                            <div class="text-danger mt-2">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-7">
+                        <label for="content" class="form-label">Content</label>
+                        <textarea class="block mt-1 w-full rounded-md h-64 border-black border-opacity-20"
+                            placeholder="Insert content here" id="content" name="content"></textarea required value="{{ old('content') }}">
+                        @error('content')
+    <div class="text-danger mt-2">{{ $message }}</div>
+@enderror
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="submit" class="btn btn-dark w-100 bg-black hover:bg-gray-600 text-white p-3 rounded-md">Insert</button>
+                    </div>
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
+</x-slot>
 </x-app-layout>
