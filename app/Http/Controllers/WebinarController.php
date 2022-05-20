@@ -17,7 +17,7 @@ class WebinarController extends Controller
     {
         //
         return view('webinar.index', [
-            'webinars' => Webinar::paginate(6),
+            'webinars' => Webinar::orderByDesc('created_at')->paginate(6),
         ]);
     }
 

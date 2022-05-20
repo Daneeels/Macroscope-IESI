@@ -7,14 +7,12 @@
                         {{ $artikel->title }}
                     </h2>
 
-
                     <div class="flex justify-between">
                         <div>
                             <h5 class="font-thin text-sm text-black leading-normal opacity-80 mt-1 mb-4">
                                 By {{ $artikel->author }}
                             </h5>
                         </div>
-
                         <div>
                             <div class="flex contents-end">
                                 <h5
@@ -24,7 +22,6 @@
                                 </h5>
                             </div>
                         </div>
-
                     </div>
 
                     <hr class="mb-7">
