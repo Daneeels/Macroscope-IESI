@@ -36,7 +36,7 @@
                     <div class="mb-7">
                         <label for="content" class="form-label">Content</label>
                         <textarea class="block mt-1 w-full rounded-md h-64 border-black border-opacity-20" placeholder="Insert content here"
-                            id="content" name="content" value="{{ $artikel->content }}"></textarea>
+                            id="content" name="content">{{ $artikel->content }}</textarea>
                         @error('content')
                             <div class="text-danger mt-2">{{ $message }}</div>
                         @enderror

@@ -16,7 +16,7 @@ class WebinarController extends Controller
     public function index()
     {
         //
-        return view('webinar.index',[
+        return view('webinar.index', [
             'webinars' => Webinar::paginate(6),
         ]);
     }
@@ -42,7 +42,7 @@ class WebinarController extends Controller
     {
         $this->authorize('admin');
         Webinar::create($request->all());
-        return back()->with('success','Webinar berhasil terinput :D');
+        return redirect('webinar')->with('success', 'Webinar berhasil terinput :D');
     }
 
     /**
@@ -65,7 +65,7 @@ class WebinarController extends Controller
     public function edit(Webinar $webinar)
     {
         $this->authorize('admin');
-        return view('webinar.edit',[
+        return view('webinar.edit', [
             'webinar' => $webinar,
         ]);
     }
@@ -86,7 +86,7 @@ class WebinarController extends Controller
             'link' => $request->link,
             'date' => $request->date,
         ]);
-        return back()->with('success','Webinar berhasil teredit :)');
+        return back()->with('success', 'Webinar berhasil teredit :)');
     }
 
     /**

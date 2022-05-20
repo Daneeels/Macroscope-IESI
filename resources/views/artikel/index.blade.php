@@ -1,5 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
+        @if (session()->has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session()->get('success') }}
+            </div>
+        @endif
         <h2 class="font-extrabold text-3xl mx-auto my-2">
             {{ __('Our Articles') }}
         </h2>
@@ -23,9 +28,11 @@
                                     {{-- <a href="{{route('webinar.edit', $webinar)}}">Edit</a> --}}
                                     <x-dropdown width="24">
                                         <x-slot name="trigger">
-                                            <button class="flex float-right my-2 items-center">
-                                                <div> <img src="../../../icon/option.svg" alt="option_button"></div>
-                                            </button>
+                                            <div class="flex justify-end">
+                                                <button class="my-2 items-center -mx-2">
+                                                    <div> <img src="../../../icon/option.svg" alt="option_button"></div>
+                                                </button>
+                                            </div>
                                         </x-slot>
 
                                         <x-slot name="content">
@@ -48,7 +55,7 @@
                                                 @csrf
                                                 <x-dropdown-link :href="route('artikel.destroy', $artikel->id)"
                                                     onclick="event.preventDefault();
-                                                                                                                                this.closest('form').submit();">
+                                                                                                                                                                                                                                                    this.closest('form').submit();">
                                                     {{ __('Delete') }}
                                                 </x-dropdown-link>
                                             </form>
@@ -97,7 +104,10 @@
                     </div>
                 </div>
             @endforeach
+
         </div>
-        {{ $artikels->links() }}
+        <div class="container mx-auto max-w-5xl my-10">
+            {{ $artikels->links() }}
+        </div>
     </x-slot>
 </x-app-layout>
