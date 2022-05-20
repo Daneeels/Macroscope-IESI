@@ -47,19 +47,6 @@
                             class="btn btn-dark w-100 bg-black hover:bg-gray-600 text-white px-4 py-2 rounded-md">Edit</button>
                     </div>
                 </form>
-
-                {{-- <hr>
-                    <h1>Delete Article</h1>
-                    <h6>Once you delete it, there is no going back. Are you sure?</h6>
-
-                    <form action="{{route('artikel.destroy', $artikel->id)}}" method="post">
-                        @method('delete')
-                        @csrf
-                        <div class="d-flex flex-column">
-                            <button type="submit" class="btn btn-outline-danger">Delete</button>
-                        </div>
-                        
-                    </form> --}}
             </div>
         </div>
     </x-slot>

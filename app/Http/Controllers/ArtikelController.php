@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artikel;
 use Illuminate\Http\Request;
 use App\Http\Requests\ArtikelRequest;
+use Illuminate\Database\Eloquent;
 
 class ArtikelController extends Controller
 {
@@ -16,7 +17,7 @@ class ArtikelController extends Controller
     public function index()
     {
         return view('artikel.index', [
-            'artikels' => Artikel::paginate(9),
+            'artikels' => Artikel::orderByDesc('created_at')->paginate(9),
         ]);
     }
 

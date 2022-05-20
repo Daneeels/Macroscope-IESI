@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         @if (session()->has('success'))
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-success bg-lime-100 text-green-600 rounded-md p-5" role="alert">
                 {{ session()->get('success') }}
             </div>
         @endif
@@ -25,7 +25,6 @@
                                 <a href="{{ route('artikel.edit', $artikel) }}"></a>
 
                                 <span class="font-semibold text-lg text-black-400 leading-tight">
-                                    {{-- <a href="{{route('webinar.edit', $webinar)}}">Edit</a> --}}
                                     <x-dropdown width="24">
                                         <x-slot name="trigger">
                                             <div class="flex justify-end">
@@ -40,22 +39,12 @@
                                                 {{ __('Edit') }}
                                             </x-dropdown-link>
                                             <!-- Authentication -->
-                                            {{-- <form method="POST" action="{{ route('logout') }}">
-                                            @csrf
-                
-                                            <x-dropdown-link :href="route('logout')"
-                                                    onclick="event.preventDefault();
-                                                                this.closest('form').submit();">
-                                                {{ __('Log Out') }}
-                                            </x-dropdown-link>
-                                        </form> --}}
-
                                             <form action="{{ route('artikel.destroy', $artikel->id) }}" method="post">
                                                 @method('delete')
                                                 @csrf
                                                 <x-dropdown-link :href="route('artikel.destroy', $artikel->id)"
                                                     onclick="event.preventDefault();
-                                                                                                                                                                                                                                                    this.closest('form').submit();">
+                                                                                                                                                                                                                                                                                                            this.closest('form').submit();">
                                                     {{ __('Delete') }}
                                                 </x-dropdown-link>
                                             </form>
@@ -64,26 +53,6 @@
                                 </span>
                             </h3>
                         @endcan
-                        {{-- <div class="card mb-4">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                <h5 class="card-title"><a href="artikel/{{$artikel->id}}" style="text-decoration: none; color: black" class="fs-4">{{$artikel->title}}</a></h5>
-                                    @can('admin')
-                                    <div>
-                                        <a class="btn btn-primary" href="artikel/edit/{{$artikel->id}}" role="button">Edit</a>
-                                    </div>
-                                    @endcan
-                                </div>
-                                <h6 class="card-subtitle mb-2 text-muted">By {{$artikel->author}}</h6>
-                                {{-- PROBLEM!!! --}}
-                        {{-- <p class="card-text">{{$artikel->content}}</p>
-                                <a href="artikel/{{$artikel->id}}" class="card-link">Read more</a>
-                            </div>
-                        </div> --}}
-
-                        {{-- <div class="md:container md:mx-auto">
-
-                        </div> --}}
                         <div class="w-full mb-5">
                             <img src="../../../img/img_dummy.png" alt="add_button" class="w-full">
                         </div>
