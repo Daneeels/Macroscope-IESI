@@ -43,11 +43,12 @@ class ArtikelController extends Controller
         $this->authorize('admin');
         $file_name = $request->image->getClientOriginalName();
         $image = $request->image->storeAs('image', $file_name);
-        Artikel::create(['title' => $request->title,
-                            'author' => $request->author,
-                            'content' => $request->content,
-                            'image' => $image,
-                        ]);
+        Artikel::create([
+            'title' => $request->title,
+            'author' => $request->author,
+            'content' => $request->content,
+            'image' => $image,
+        ]);
         return redirect('artikel')->with('success', 'Artikel berhasil terinput :D');
     }
 
@@ -97,7 +98,7 @@ class ArtikelController extends Controller
             'content' => $request->content,
             'image' => $image,
         ]);
-        return back()->with('success', 'Artikel berhasil teredit :)');
+        return redirect('artikel')->with('success', 'Artikel berhasil teredit :)');
     }
 
     // /**

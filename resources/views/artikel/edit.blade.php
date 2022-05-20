@@ -8,7 +8,8 @@
 
         <div class="container mx-auto my-16">
             <div class="p-12">
-                <form action="{{ route('artikel.update', $artikel->id) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('artikel.update', $artikel->id) }}" method="post"
+                    enctype="multipart/form-data">
                     @method('put')
                     @csrf
                     <div class="mb-7">
@@ -60,7 +61,7 @@
                                 @enderror
                             </div>
                         </div>
-                        
+
                     </div>
 
                     <div class="flex justify-end">

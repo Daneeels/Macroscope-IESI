@@ -44,7 +44,7 @@
                                                 @csrf
                                                 <x-dropdown-link :href="route('artikel.destroy', $artikel->id)"
                                                     onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                            this.closest('form').submit();">
+                                                                                                                            this.closest('form').submit();">
                                                     {{ __('Delete') }}
                                                 </x-dropdown-link>
                                             </form>
@@ -54,7 +54,8 @@
                             </h3>
                         @endcan
                         <div class="w-full mb-5">
-                            <img src="{{asset('storage/' . $artikel->image)}}" alt="add_button" class="w-full">
+                            <img src="{{ asset('storage/' . $artikel->image) }}" alt="add_button"
+                                class="lg:h-72 md:h-48 w-full object-cover object-center">
                         </div>
                         <h3 class="font-bold text-xl text-black leading-tight">
                             <a href="{{ route('artikel.show', $artikel) }}">{{ $artikel->title }}</a>
