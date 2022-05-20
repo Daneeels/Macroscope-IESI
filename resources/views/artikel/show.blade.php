@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="container mx-auto my-6">
+        <div class="container mx-auto my-4">
             <div class="p-12">
                 <div class="p-6">
                     <h2 class="font-extrabold text-5xl text-gray-800 leading-tight">
@@ -26,8 +26,9 @@
 
                     <hr class="mb-7">
 
-                    <div class="w-full mb-5">
-                        <img src="{{asset('storage/' . $artikel->image)}}" alt="add_button" class="w-full">
+                    <div class="w-full mb-14">
+                        <img src="{{ asset('storage/' . $artikel->image) }}" alt="add_button"
+                            class="lg:h-96 md:h-72 w-full object-cover object-center rounded-md">
                     </div>
                     <h5 class="font-thin text-base text-gray-700 leading-normal text-justify">
                         {{ $artikel->content }}

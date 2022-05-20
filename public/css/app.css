@@ -683,6 +683,10 @@ select {
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -743,6 +747,12 @@ select {
 .mt-6 {
   margin-top: 1.5rem;
 }
+.mb-12 {
+  margin-bottom: 3rem;
+}
+.mb-14 {
+  margin-bottom: 3.5rem;
+}
 .block {
   display: block;
 }
@@ -782,11 +792,17 @@ select {
 .h-64 {
   height: 16rem;
 }
-.h-7 {
-  height: 1.75rem;
+.h-60 {
+  height: 15rem;
 }
 .max-h-5 {
   max-height: 1.25rem;
+}
+.max-h-10 {
+  max-height: 2.5rem;
+}
+.max-h-12 {
+  max-height: 3rem;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -815,8 +831,10 @@ select {
 .w-8 {
   width: 2rem;
 }
-.w-7 {
-  width: 1.75rem;
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .max-w-7xl {
   max-width: 80rem;
@@ -971,14 +989,6 @@ select {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
-.border-green-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(22 163 74 / var(--tw-border-opacity));
-}
-.border-green-300 {
-  --tw-border-opacity: 1;
-  border-color: rgb(134 239 172 / var(--tw-border-opacity));
-}
 .border-opacity-20 {
   --tw-border-opacity: 0.2;
 }
@@ -1006,11 +1016,20 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(238 242 255 / var(--tw-bg-opacity));
 }
+.bg-slate-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}
 .fill-current {
   fill: currentColor;
 }
-.stroke-green-600 {
-  stroke: #16a34a;
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.object-center {
+  -o-object-position: center;
+     object-position: center;
 }
 .p-6 {
   padding: 1.5rem;
@@ -1561,6 +1580,18 @@ select {
 }
 @media (min-width: 768px) {
 
+  .md\:h-48 {
+    height: 12rem;
+  }
+
+  .md\:h-72 {
+    height: 18rem;
+  }
+
+  .md\:h-12 {
+    height: 3rem;
+  }
+
   .md\:w-80 {
     width: 20rem;
   }
@@ -1576,8 +1607,30 @@ select {
   .md\:border-l {
     border-left-width: 1px;
   }
+
+  .md\:object-cover {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }
 @media (min-width: 1024px) {
+
+  .lg\:h-72 {
+    height: 18rem;
+  }
+
+  .lg\:h-96 {
+    height: 24rem;
+  }
+
+  .lg\:h-24 {
+    height: 6rem;
+  }
+
+  .lg\:object-cover {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 
   .lg\:px-8 {
     padding-left: 2rem;
