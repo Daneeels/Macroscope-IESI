@@ -28,6 +28,7 @@ class WebinarRequest extends FormRequest
             'speaker' => ['required', 'string', 'max:255', 'min:3'],
             'date' => ['required', 'date'],
             'link' => ['required', 'string'],
+            'image' => ['required', 'mimes:jpg,jpeg,png'],
         ];
     }
 }

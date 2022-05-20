@@ -41,7 +41,14 @@ class WebinarController extends Controller
     public function store(WebinarRequest $request)
     {
         $this->authorize('admin');
-        Webinar::create($request->all());
+        $file_name = $request->image->getClientOriginalName();
+        $image = $request->image->storeAs('image', $file_name);
+        
+        Webinar::create(['title' => $request->title,
+        'speaker' => $request->speaker,
+        'link' => $request->link,
+        'date' => $request->date,
+        'image' => $image,]);
         return redirect('webinar')->with('success', 'Webinar berhasil terinput :D');
     }
 
@@ -80,13 +87,18 @@ class WebinarController extends Controller
     public function update(WebinarRequest $request, $id)
     {
         $this->authorize('admin');
+        $file_name = $request->image->getClientOriginalName();
+        $image = $request->image->storeAs('image', $file_name);
+
+
         Webinar::find($id)->update([
             'title' => $request->title,
             'speaker' => $request->speaker,
             'link' => $request->link,
             'date' => $request->date,
+            'image' => $image,
         ]);
-        return back()->with('success', 'Webinar berhasil teredit :)');
+        return redirect('webinar')->with('success', 'Webinar berhasil teredit :)');
     }
 
     /**

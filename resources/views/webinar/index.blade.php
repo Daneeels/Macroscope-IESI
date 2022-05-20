@@ -25,6 +25,10 @@
                             {{ $webinar->title }}
                         </h3>
 
+                        <div class="w-full mb-5">
+                            <img src="{{asset('storage/' . $webinar->image)}}" alt="add_button" class="w-full">
+                        </div>
+
                         @can('admin')
                             <span class="font-semibold text-lg text-black-400 leading-tight">
 

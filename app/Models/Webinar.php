@@ -14,5 +14,6 @@ class Webinar extends Model
         'speaker',
         'link',
         'date',
+        'image',
     ];
 }
