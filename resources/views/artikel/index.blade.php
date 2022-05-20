@@ -54,7 +54,7 @@
                             </h3>
                         @endcan
                         <div class="w-full mb-5">
-                            <img src="../../../img/img_dummy.png" alt="add_button" class="w-full">
+                            <img src="{{asset('storage/' . $artikel->image)}}" alt="add_button" class="w-full">
                         </div>
                         <h3 class="font-bold text-xl text-black leading-tight">
                             <a href="{{ route('artikel.show', $artikel) }}">{{ $artikel->title }}</a>

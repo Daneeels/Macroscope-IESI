@@ -9,7 +9,7 @@
 
         <div class="container mx-auto my-16">
             <div class="p-12">
-                <form action="{{ route('artikel.store') }}" method="post">
+                <form action="{{ route('artikel.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-7">
                         <label for="title" class="form-label">Title</label>
@@ -36,11 +36,33 @@
                     <div class="mb-7">
                         <label for="content" class="form-label">Content</label>
                         <textarea class="block mt-1 w-full rounded-md h-64 border-black border-opacity-20"
-                            placeholder="Insert content here" id="content" name="content"></textarea required value="{{ old('content') }}">
+                            placeholder="Insert content here" id="content" name="content" required>{{ old('content') }}</textarea>
                         @error('content')
-    <div class="text-danger mt-2">{{ $message }}</div>
-@enderror
+                            <div class="text-danger mt-2">{{ $message }}</div>
+                        @enderror
                     </div>
+
+                    <div class="mb-7">
+                        <div class="flex flex-col">
+                            <div>
+                                <label for="image" class="form-label">Image</label>
+                            </div>
+
+                            <div>
+                                <input type="file" name="image" id="image">
+                            </div>
+
+                            <div>
+                                @error('image')
+                                    <div class="text-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+                        
+                    </div>
+
                     <div class="flex justify-end">
                         <button type="submit" class="btn btn-dark w-100 bg-black hover:bg-gray-600 text-white p-3 rounded-md">Insert</button>
                     </div>

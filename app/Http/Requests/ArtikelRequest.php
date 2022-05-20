@@ -27,6 +27,7 @@ class ArtikelRequest extends FormRequest
             'title' => ['required', 'string', 'max:255', 'min:3'],
             'author' => ['required', 'string', 'max:255', 'min:3'],
             'content' => ['required', 'string', 'min:3'],
+            'image' => ['required', 'mimes:jpg,jpeg,png'],
         ];
     }
 }

@@ -41,7 +41,13 @@ class ArtikelController extends Controller
     public function store(ArtikelRequest $request)
     {
         $this->authorize('admin');
-        Artikel::create($request->all());
+        $file_name = $request->image->getClientOriginalName();
+        $image = $request->image->storeAs('image', $file_name);
+        Artikel::create(['title' => $request->title,
+                            'author' => $request->author,
+                            'content' => $request->content,
+                            'image' => $image,
+                        ]);
         return redirect('artikel')->with('success', 'Artikel berhasil terinput :D');
     }
 
@@ -83,10 +89,13 @@ class ArtikelController extends Controller
     {
 
         $this->authorize('admin');
+        $file_name = $request->image->getClientOriginalName();
+        $image = $request->image->storeAs('image', $file_name);
         Artikel::find($id)->update([
             'title' => $request->title,
             'author' => $request->author,
             'content' => $request->content,
+            'image' => $image,
         ]);
         return back()->with('success', 'Artikel berhasil teredit :)');
     }

@@ -8,7 +8,7 @@
 
         <div class="container mx-auto my-16">
             <div class="p-12">
-                <form action="{{ route('artikel.update', $artikel->id) }}" method="post">
+                <form action="{{ route('artikel.update', $artikel->id) }}" method="post" enctype="multipart/form-data">
                     @method('put')
                     @csrf
                     <div class="mb-7">
@@ -40,6 +40,27 @@
                         @error('content')
                             <div class="text-danger mt-2">{{ $message }}</div>
                         @enderror
+                    </div>
+
+                    <div class="mb-7">
+                        <div class="flex flex-col">
+                            <div>
+                                <label for="image" class="form-label">Image</label>
+                            </div>
+
+                            <div>
+                                <input type="file" name="image" id="image">
+                            </div>
+
+                            <div>
+                                @error('image')
+                                    <div class="text-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+                        
                     </div>
 
                     <div class="flex justify-end">

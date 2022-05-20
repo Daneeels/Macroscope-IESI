@@ -25,6 +25,10 @@
                     </div>
 
                     <hr class="mb-7">
+
+                    <div class="w-full mb-5">
+                        <img src="{{asset('storage/' . $artikel->image)}}" alt="add_button" class="w-full">
+                    </div>
                     <h5 class="font-thin text-base text-gray-700 leading-normal text-justify">
                         {{ $artikel->content }}
                     </h5>

@@ -13,5 +13,6 @@ class Artikel extends Model
         'title',
         'author',
         'content',
+        'image',
     ];
 }
