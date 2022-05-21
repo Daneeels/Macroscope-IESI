@@ -15,8 +15,7 @@
                         </div>
                         <div>
                             <div class="flex contents-end">
-                                <h5
-                                    class="font-thin text-sm text-black leading-normal opacity-80 flex float-right mt-1 mb-4 ">
+                                <h5 class="font-thin text-sm text-black leading-normal opacity-80 flex mt-1 mb-4 ">
                                     <img src="../../../icon/date.svg" alt="date"
                                         class="px-2 opacity-90">{{ $artikel->created_at }}
                                 </h5>

@@ -5,7 +5,7 @@
                 {{ session()->get('success') }}
             </div>
         @endif
-        <h2 class="font-extrabold text-3xl mx-auto my-2">
+        <h2 class="font-extrabold text-4xl mx-auto my-2">
             {{ __('Our Articles') }}
         </h2>
         @can('admin')
@@ -43,8 +43,7 @@
                                                 @method('delete')
                                                 @csrf
                                                 <x-dropdown-link :href="route('artikel.destroy', $artikel->id)"
-                                                    onclick="event.preventDefault();
-                                                                                                                            this.closest('form').submit();">
+                                                    onclick="event.preventDefault();this.closest('form').submit();">
                                                     {{ __('Delete') }}
                                                 </x-dropdown-link>
                                             </form>

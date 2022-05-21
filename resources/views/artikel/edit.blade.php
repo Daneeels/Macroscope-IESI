@@ -50,13 +50,13 @@
                             </div>
 
                             <div>
-                                <input type="file" name="image" id="image">
+                                <input type="file" name="image" id="image" class="text-gray-500">
                             </div>
 
                             <div>
                                 @error('image')
-                                    <div class="text-danger mt-2">
-                                        {{ $message }}
+                                    <div class="text-red-500 mt-2">
+                                        *{{ $message }}
                                     </div>
                                 @enderror
                             </div>
@@ -72,5 +72,4 @@
             </div>
         </div>
     </x-slot>
-
 </x-app-layout>
