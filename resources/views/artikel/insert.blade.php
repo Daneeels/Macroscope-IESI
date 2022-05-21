@@ -35,8 +35,8 @@
                     </div>
                     <div class="mb-7">
                         <label for="content" class="form-label">Content</label>
-                        <textarea class="block mt-1 w-full rounded-md h-64 border-black border-opacity-20"
-                            placeholder="Insert content here" id="content" name="content" required>{{ old('content') }}</textarea>
+                        <textarea class="block mt-1 w-full rounded-md h-64 border-black border-opacity-20" placeholder="Insert content here"
+                            id="content" name="content" required>{{ old('content') }}</textarea>
                         @error('content')
                             <div class="text-danger mt-2">{{ $message }}</div>
                         @enderror
@@ -49,25 +49,26 @@
                             </div>
 
                             <div>
-                                <input type="file" name="image" id="image">
+                                <input type="file" name="image" id="image" class="text-gray-500">
                             </div>
 
                             <div>
                                 @error('image')
-                                    <div class="text-danger mt-2">
-                                        {{ $message }}
+                                    <div class="text-red-500 mt-2">
+                                        *{{ $message }}
                                     </div>
                                 @enderror
                             </div>
                         </div>
-                        
+
                     </div>
 
                     <div class="flex justify-end">
-                        <button type="submit" class="btn btn-dark w-100 bg-black hover:bg-gray-600 text-white p-3 rounded-md">Insert</button>
+                        <button type="submit"
+                            class="btn btn-dark w-100 bg-black hover:bg-gray-600 text-white p-3 rounded-md">Insert</button>
                     </div>
-                    </form>
-                </div>
+                </form>
             </div>
-</x-slot>
+        </div>
+    </x-slot>
 </x-app-layout>
