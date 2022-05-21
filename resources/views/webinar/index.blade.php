@@ -1,14 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
         @if (session()->has('success'))
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-success bg-lime-100 text-green-600 rounded-md p-5" role="alert">
                 {{ session()->get('success') }}
             </div>
         @endif
         <h2 class="font-extrabold text-4xl mx-auto my-2">
             {{ __("Macroscope's Webinars") }}
         </h2>
-        <div class="container mx-auto mt-12 mb-4 md:flex sm:flex sm:justify-center gap-3">
+        <div class="container mx-auto mt-12 mb-4 md:flex sm:flex sm:justify-center gap-6">
             <div class="flex justify-center my-6">
                 <div>
                     <img src="../../../img/pic_1.jpg" alt="speakers"
@@ -58,13 +58,11 @@
                                             </button>
                                         </div>
                                     </x-slot>
-
                                     <x-slot name="content">
                                         <x-dropdown-link href="{{ route('webinar.edit', $webinar) }}">
                                             {{ __('Edit') }}
                                         </x-dropdown-link>
                                         <!-- Authentication -->
-
                                         <form action="{{ route('webinar.destroy', $webinar->id) }}" method="post">
                                             @method('Delete')
                                             @csrf
@@ -72,18 +70,16 @@
                                                 onclick="event.preventDefault();this.closest('form').submit();">
                                                 {{ __('Delete') }}
                                             </x-dropdown-link>
-
                                         </form>
                                     </x-slot>
                                 </x-dropdown>
                             </span>
                         @endcan
-
                         <div class="flex flex-col md:flex-row">
                             <div class="mr-5">
                                 <div class="w-full flex justify-center">
                                     <img src="{{ asset('storage/' . $webinar->image) }}" alt="add_button"
-                                        class="lg:h-64 md:h-48 w-full object-cover object-center">
+                                        class="lg:h-64 md:h-48 lg:w-44 md:w-44 w-full object-cover object-center">
                                 </div>
                             </div>
                             <div>
@@ -108,11 +104,12 @@
                                 </h5>
                             </div>
                         </div>
-
                     </div>
                 </div>
             @endforeach
         </div>
-        {{ $webinars->links() }}
+        <div class="container mx-auto max-w-5xl my-10">
+            {{ $webinars->links() }}
+        </div>
     </x-slot>
 </x-app-layout>
