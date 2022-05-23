@@ -5,17 +5,23 @@
                 {{ session()->get('success') }}
             </div>
         @endif
-        <h2 class="font-extrabold text-4xl mx-auto my-2">
-            {{ __('Our Articles') }}
-        </h2>
-        @can('admin')
-            <div class="flex justify-end">
-                <div class="mt-7 mb-3 opacity-50 hover:opacity-100 hover:cursor-pointer">
-                    <a href="{{ route('artikel.create') }}" class="flex">Add
-                        <img src="../../../icon/add_circle.svg" alt="add_button" class="px-2"></a>
+        <div class="container mx-auto max-w-5xl my-5">
+            <h2 class="font-extrabold text-4xl mx-auto my-2">
+                {{ __('Our Articles') }}
+            </h2>
+        </div>
+        
+        <div class="container mx-auto max-w-5xl my-5">
+            @can('admin')
+                <div class="flex justify-end">
+                    <div class="mt-7 mb-3 opacity-50 hover:opacity-100 hover:cursor-pointer">
+                        <a href="{{ route('artikel.create') }}" class="flex">Add
+                            <img src="../../../icon/add_circle.svg" alt="add_button" class="px-2"></a>
+                    </div>
                 </div>
-            </div>
-        @endcan
+            @endcan
+        </div>
+        
         <div class="container mx-auto px-2 mt-2 sm:flex sm:flex-wrap sm:justify-center gap-6">
             @foreach ($artikels as $artikel)
                 <div class="overflow-hidden shadow-lg rounded-md mb-4 sm:w-64 md:w-80">
@@ -54,7 +60,7 @@
                         @endcan
                         <div class="w-full mb-5">
                             <img src="{{ asset('storage/' . $artikel->image) }}" alt="add_button"
-                                class="lg:h-72 md:h-48 w-full object-cover object-center">
+                                class="lg:h-72 md:h-48 w-full object-cover object-center p-1.5">
                         </div>
                         <h3 class="font-bold text-xl text-black leading-tight">
                             <a href="{{ route('artikel.show', $artikel) }}">{{ $artikel->title }}</a>
