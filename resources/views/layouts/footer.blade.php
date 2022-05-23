@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 shadow-md">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-2">
             <!-- Mitra -->
-            <div class="px-3 mb-3 md:col-span-2 lg:col-span-2">
+            <div class="px-3 mb-3 md:col-span-2 lg:col-span-2 w-4/5">
                 <h1 class="text-5xl font-extrabold mb-5">Macroscope</h1>
                 <p>Best clothing store in Malang is launching an educational website. Macroscope
                     strives to contribute,
@@ -21,8 +21,8 @@
             <div class="px-3 mb-3">
                 <h2 class="text-lg font-bold mb-2">Features</h2>
                 <ul class="list-none">
-                    <li><a href="#">Article</a></li>
-                    <li><a href="#">Webinar</a></li>
+                    <li><a href="{{route('artikel.index')}}">Article</a></li>
+                    <li><a href="{{route('webinar.index')}}">Webinar</a></li>
                 </ul>
             </div>
             <!-- Contact Us -->

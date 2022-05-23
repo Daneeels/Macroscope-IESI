@@ -79,7 +79,7 @@
                             <div class="mr-5">
                                 <div class="w-full flex justify-center">
                                     <img src="{{ asset('storage/' . $webinar->image) }}" alt="add_button"
-                                        class="lg:h-64 md:h-48 lg:w-44 md:w-44 w-full object-cover object-center">
+                                        class="lg:h-40 md:h-36 lg:w-44 md:w-44 w-full object-cover object-center">
                                 </div>
                             </div>
                             <div>
@@ -108,7 +108,7 @@
                 </div>
             @endforeach
         </div>
-        <div class="container mx-auto max-w-5xl my-10">
+        <div class="container mx-auto mx-auto my-10">
             {{ $webinars->links() }}
         </div>
     </x-slot>

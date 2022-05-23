@@ -866,6 +866,15 @@ select {
 .w-1\/2 {
   width: 50%;
 }
+.w-3\/4 {
+  width: 75%;
+}
+.w-2\/5 {
+  width: 40%;
+}
+.w-4\/5 {
+  width: 80%;
+}
 .max-w-7xl {
   max-width: 80rem;
 }
@@ -1710,6 +1719,18 @@ select {
     height: 14rem;
   }
 
+  .md\:h-40 {
+    height: 10rem;
+  }
+
+  .md\:h-28 {
+    height: 7rem;
+  }
+
+  .md\:h-36 {
+    height: 9rem;
+  }
+
   .md\:w-96 {
     width: 24rem;
   }
@@ -1770,6 +1791,18 @@ select {
 
   .lg\:h-60 {
     height: 15rem;
+  }
+
+  .lg\:h-44 {
+    height: 11rem;
+  }
+
+  .lg\:h-32 {
+    height: 8rem;
+  }
+
+  .lg\:h-40 {
+    height: 10rem;
   }
 
   .lg\:w-44 {

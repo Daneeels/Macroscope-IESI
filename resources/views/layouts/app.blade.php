@@ -14,21 +14,6 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-<<<<<<< HEAD
-            <!-- Page Heading -->
-            <header class="bg-slate-50">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-
-            <!-- Page Content -->
-            <main class="bg-black">
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
-=======
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
@@ -38,7 +23,7 @@
         @include('layouts.navigation')
 
         <!-- Page Heading -->
-        <header class="bg-white shadow">
+        <header class="bg-slate-50">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 {{ $header }}
             </div>
@@ -53,5 +38,4 @@
     </div>
 </body>
 
->>>>>>> 1ab2730a6b2a8440804bbc15936799e9bdceec11
 </html>
