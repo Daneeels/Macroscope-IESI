@@ -30,7 +30,7 @@
         </header>
 
         <!-- Page Content -->
-        <main>
+        <main class="bg-slate-50">
             {{ $slot }}
         </main>
 
